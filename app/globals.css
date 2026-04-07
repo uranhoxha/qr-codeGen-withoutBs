@@ -1,26 +1,83 @@
+@import url("https://fonts.googleapis.com/css2?family=Sawarabi+Gothic&display=swap");
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --bg-system: #c0c0c0;
+  --win-blue-dark: #000080;
+  --win-blue-light: #1084d0;
+  --border-light: #ffffff;
+  --border-dark: #000000;
+  --border-gray: #808080;
+  --text-main: #000000;
+  --text-white: #ffffff;
+  --font-win: "W95FA", "Microsoft Sans Serif", "Arial", sans-serif;
+  --font-secondary: "Sawarabi Gothic", sans-serif;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: #008080;
+  color: var(--text-main);
+  font-family: var(--font-win);
+  font-size: 13px;
+}
+
+.win98-raised {
+  background-color: var(--bg-system);
+  border-top: 2px solid var(--border-light);
+  border-left: 2px solid var(--border-light);
+  border-right: 2px solid var(--border-dark);
+  border-bottom: 2px solid var(--border-dark);
+  box-shadow: 2px 2px 0 var(--border-gray);
+}
+
+.win98-raised-sm {
+  background-color: var(--bg-system);
+  border-top: 1px solid var(--border-light);
+  border-left: 1px solid var(--border-light);
+  border-right: 1px solid var(--border-dark);
+  border-bottom: 1px solid var(--border-dark);
+}
+
+.win98-sunken {
+  border-top: 1px solid var(--border-gray);
+  border-left: 1px solid var(--border-gray);
+  border-right: 1px solid var(--border-light);
+  border-bottom: 1px solid var(--border-light);
+  box-shadow: inset 1px 1px 0 var(--border-dark);
+}
+
+.win98-fieldset {
+  border-top: 1px solid var(--border-gray);
+  border-left: 1px solid var(--border-gray);
+  border-right: 1px solid var(--border-light);
+  border-bottom: 1px solid var(--border-light);
+}
+
+.win98-titlebar {
+  background: linear-gradient(to right, var(--win-blue-dark), var(--win-blue-light));
+}
+
+.win98-btn {
+  background-color: var(--bg-system);
+  border-top: 1px solid var(--border-light);
+  border-left: 1px solid var(--border-light);
+  border-right: 1px solid var(--border-dark);
+  border-bottom: 1px solid var(--border-dark);
+  box-shadow: inset 1px 1px 0 #dfdfdf;
+  font-family: var(--font-win);
+  outline: none;
+}
+
+.win98-btn:active {
+  border-top: 1px solid var(--border-dark);
+  border-left: 1px solid var(--border-dark);
+  border-right: 1px solid var(--border-light);
+  border-bottom: 1px solid var(--border-light);
+  padding: 5px 14px 3px 16px;
+  box-shadow: none;
+}
+
+.win98-btn:disabled {
+  opacity: 0.6;
+  cursor: default;
 }
